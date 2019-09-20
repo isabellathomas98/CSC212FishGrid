@@ -15,7 +15,7 @@ import me.jjfoley.gfx.IntPoint;
  * 
  * All movement is defined in this class.
  * 
- * @author jfoley
+ * @author Bella Thomas
  */
 public abstract class WorldObject {
 	/**

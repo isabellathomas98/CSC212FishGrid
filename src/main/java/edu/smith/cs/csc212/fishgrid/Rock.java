@@ -6,8 +6,6 @@ import java.awt.geom.RoundRectangle2D;
 
 /**
  * It would be awful nice to have multi-colored rocks at random.
- * This is not <a href="https://en.wikipedia.org/wiki/Dwayne_Johnson">the Rock</a>, but a Rock.
- * @author jfoley
  */
 public class Rock extends WorldObject {
 	/**
@@ -27,15 +25,16 @@ public class Rock extends WorldObject {
 			new Color(72,60,50)
 	};
 	
-	// TODO(lab): introduce a variable that is part of the class (one per Rock object) here that indexes the ROCK_COLORS array.
-	
+	// (lab): introduce a variable that is part of the class (one per Rock object) here that indexes the ROCK_COLORS array.
+	int rock_color;
 	/**
 	 * Construct a Rock in our world.
 	 * @param world - the grid world.
 	 */
 	public Rock(World world) {
 		super(world);
-		// TODO(lab): initialize your rock color index to a random number!
+		//(lab): initialize your rock color index to a random number!
+		rock_color=rand.nextInt(ROCK_COLORS.length);
 		// Note that all WorldObjects have a ``rand`` available so you don't need to make one.
 	}
 
@@ -44,8 +43,8 @@ public class Rock extends WorldObject {
 	 */
 	@Override
 	public void draw(Graphics2D g) {
-		// TODO(lab): use the right color in here...
-		g.setColor(Color.gray);
+		//(lab): use the right color in here...
+		g.setColor(ROCK_COLORS[rock_color]);
 		RoundRectangle2D rock = new RoundRectangle2D.Double(-.5,-.5,1,1,0.3,0.3);
 		g.fill(rock);
 	}
